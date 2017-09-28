@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<d:MvxContentPage x:TypeArguments="viewModels:LoginViewModel"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Bagahe.Core.Views.Login"
+    x:Class="Bagahe.Core.Views.Login.LoginView"
+    xmlns:viewModels="clr-namespace:Bagahe.Core.ViewModels.Login;assembly=Bagahe.Core"
+    xmlns:d="clr-namespace:MvvmCross.Forms.Core;assembly=MvvmCross.Forms"
+    xmlns:MvxView="clr-namespace: MvvmCross.Forms.Views;assembly=MvvmCross.Forms">
+
+  <ContentPage.Padding>
+    <OnPlatform x:TypeArguments="Thickness"
+                iOS="20, 40, 20, 20"
+                Android="20, 20, 20, 20"
+                WinPhone="20, 20, 20, 20" />
+  </ContentPage.Padding>
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <Style x:Key="errorMessageText" TargetType="Label">
+        <Setter Property="TextColor" Value="Red" />
+      </Style>
+      <Style x:Key="loginErrorMsg" TargetType="Label">
+        <Setter Property="TextColor" Value="Red" />
+        <Setter Property="HorizontalTextAlignment" Value="Center"/>
+        <Setter Property="VerticalTextAlignment" Value="Center"/>
+      </Style>
+      <Style x:Key="buttonProperty" TargetType="Button">
+        <Setter Property="BackgroundColor" Value="#2196f3"/>
+        <Setter Property="BorderRadius" Value="4"/>
+        <Setter Property="TextColor" Value="Black" />
+      </Style>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+
+  <ContentPage.Content>
+    <ScrollView>
+      <StackLayout VerticalOptions="FillAndExpand"
+                   HorizontalOptions="FillAndExpand"
+                   Orientation="Vertical"
+                   Spacing="4">
+        <ContentView Padding="20">
+          <!-- <Label Text="Place Image Here!!!" /> -->
+          <!-- Placed element in a comment since this is causing error. -->
+          <!-- <Image Source="bag_logov1.png" HeightRequest="150"/> -->
+          <!-- <d:MvxImageView ImageUri="bag_logov1.png" /> -->
+        </ContentView>
+        <MvxView:MvxImageView ImageUri="bag_logov1.png" />
+        <Label Text="{Binding LoginErrorMsg}"
+              Style="{StaticResource loginErrorMsg}"/>
+        <Label Text="Username:"/>
+        <Entry Text="{Binding Username}" />
+        <Label Text="{Binding UsernameErrorMsg}"
+               Style="{StaticResource errorMessageText}" />
+        <Label Text="Password:" />
+        <Entry Text="{Binding Password}"
+               IsPassword="True" />
+        <Label Text="{Binding PasswordErrorMsg}"
+               Style="{StaticResource errorMessageText}"/>
+        <Button Text="Login"
+                Style="{StaticResource buttonProperty}"
+                Command ="{Binding ShowMenuPageCommand}"/>
+
+        <Label Text="Don't have an account?"
+         HorizontalTextAlignment="Center"
+         VerticalTextAlignment="Center" />
+        <Button Text="Signup"
+                BackgroundColor="Transparent"
+                TextColor="Blue"
+                Command ="{Binding ShowSignUpCommand}"/>
+      </StackLayout>
+    </ScrollView>
+  </ContentPage.Content>
+
+
+</d:MvxContentPage>

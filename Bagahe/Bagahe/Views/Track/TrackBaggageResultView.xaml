@@ -1,0 +1,12 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<d:MvxContentPage x:TypeArguments="viewModels:TrackBaggageResultViewModel"
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:Bagahe.Core.Views.Track"
+    x:Class="Bagahe.Core.Views.Track.TrackBaggageResultView"
+    xmlns:viewModels="clr-namespace:Bagahe.Core.ViewModels.Track;assembly=Bagahe.Core"
+    xmlns:d="clr-namespace:MvvmCross.Forms.Core;assembly=MvvmCross.Forms">
+    <ContentPage.Content>
+        <Label Text="Track Baggage Results!!!" VerticalOptions="Center" HorizontalOptions="Center" />
+    </ContentPage.Content>
+</d:MvxContentPage>
